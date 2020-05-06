@@ -1,10 +1,14 @@
 from __future__ import print_function
+import pythoncom
+from docx2pdf import convert
 from mailmerge import MailMerge
-from datetime import date
-def create(A,To,D,T,V) :
+import datetime
+def create(audience, topic, event_date, time, venue) :
+    pythoncom.CoInitialize()
     template = "./application.docx"
     document = MailMerge(template)
-    w=str(date.today())
-    document.merge(Application=w,Audience=A,Topic=To,Date=D,Time=T,Venue=V)
-    #document.merge(Application='3rd Feb 2020',Audience='1st year undergraduate student of IT Department',Topic='Python',Date='5th Feb 2020',Time='5 pm',Venue='ATC 203,204')
-    document.write('a1-output.docx')
+    current_date=str(datetime.date.today())
+    document.merge(Application=current_date,Audience=audience,Topic=topic,Date=event_date,Time=time,Venue=venue)
+    file_name=str(datetime.datetime.now()).replace(":","_") + ".docx"
+    document.write(file_name)
+    convert(file_name)
