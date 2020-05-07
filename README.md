@@ -1,19 +1,18 @@
-# Application_generator
-# install the required packages for this app by using
+# Document Generator
 
-pip install flask
+## Install the application
 
-pip install docx-mailmerge
+`pip install -r requirements.txt`
 
-pip install flask_cors
+## Run the application 
 
-pip install doc2pdf
+`python3 Application_generator.py`
 
-pip install pywin32
+## Endpoint
+    Send POST request to `/application_generator` on PORT `5000`
 
+## Message Structure
+    Message Structure goes here.
 
-# to run the app 
-
-execute the command python Application_generator.py
-
-send POST request to http://localhost:5000/application_generator
+## Application Template
+    `application.docx` is the default template for applications.
