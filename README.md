@@ -1,19 +1,11 @@
 # Application_generator
-# install the required packages for this app by using
+# Install the application
 
-pip install flask
-
-pip install docx-mailmerge
-
-pip install flask_cors
-
-pip install doc2pdf
-
-pip install pywin32
+pip install -r requirements.txt
 
 
-# to run the app 
+# Run the application 
 
-execute the command python Application_generator.py
+python Application_generator
 
 send POST request to http://localhost:5000/application_generator
