@@ -13,8 +13,7 @@ def application_generator() :
     date=req_data["date"]
     time=req_data["time"]
     venue=req_data['venue']
-    email=req_data['email']
-    application.create(audience, topic, date, time, venue,email)
+    application.create(audience, topic, date, time, venue)
     return "DONE"
 
 app.run()
